@@ -7,7 +7,7 @@ body {
 
 
 
-.login-container{
+.signup-container{
     background-color: white;
 }
 
@@ -18,7 +18,7 @@ input[type="text"], input[type="password"]{
     outline: none;
 }
 
-#validate-email, #validate-password{
+#validate-email, #validate-name, #validate-phone, #validate-password, #validate-cpassword, #validate-password{
     color: red;
     font-style: italic;
 }
