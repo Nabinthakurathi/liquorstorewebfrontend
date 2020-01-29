@@ -1,0 +1,65 @@
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 53, 0.9136029411764706) 35%, rgba(255, 0, 86, 1) 100%);
+    background-repeat: no-repeat;
+    font-family: Cambria;
+}
+
+
+.nav-bar-main-container {
+    /* border: 5px solid black; */
+    background: rgba(175, 175, 175, 0.5);
+    color: white;
+    font-family: Cambria;
+    width: 100%;
+    float: left;
+    position: fixed;
+    padding-top: 5px;
+    z-index: 1;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.background-image {
+    height: 250px;
+    width: 100%;
+}
+
+.nav-bar-items {
+    margin-left: 50%;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+#btn_open_login, #btn_open_signup {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item {
+    font-size: 20px;
+}
+
+#nav-bar-logo {
+    font-size: 35px;
+}
+
+.login-container{
+    background-color: white;
+}
+
+input[type="text"], input[type="password"]{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+#validate-email, #validate-password{
+    color: red;
+    font-style: italic;
+}
