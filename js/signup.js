@@ -51,7 +51,7 @@ $(document).ready(function(){
 
           
             $.ajax({
-                url:'',
+                url:'http://localhost:8080/users/signup',
                 data:{
                     'name':name,
                     'phone':phone,
@@ -61,11 +61,26 @@ $(document).ready(function(){
                 type:'POST',
 
                 success: function(data){
-
+                   if(data.registered){
+                    $('#signup-validation').removeClass('alert-danger');
+                    $('#signup-validation').addClass('alert-success');
+                    $('#signup-validation').text(data.message);
+                    $('#signup-validation').fadeIn(100);
+                    window.location.reload();
+                   }
+                   else if(!data.registered){
+                    $('#signup-validation').removeClass('alert-success');
+                    $('#signup-validation').addClass('alert-danger');
+                    $('#signup-validation').text(data.message);
+                    $('#signup-validation').fadeIn(100);
+                   }
                 },
 
                 error: function(err){
-                    
+                    $('#signup-validation').removeClass('alert-success');
+                    $('#signup-validation').addClass('alert-danger');
+                    $('#signup-validation').text(data.message);
+                    $('#signup-validation').fadeIn(100);
                 }
             })
         }

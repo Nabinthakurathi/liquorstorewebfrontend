@@ -5,20 +5,31 @@ body {
     font-family: Cambria;
 }
 
-
-
-.signup-container{
-    background-color: white;
+html {
+    height: 100%;
 }
 
-input[type="text"], input[type="password"]{
-    border: 1px solid black;
+.signup-container {
+    background-color: white;
+    border-radius: 25px;
+    height: 100%;
+}
+
+input[type="text"], input[type="password"] {
+    /* border: 1px solid black; */
+    border: none;
     border-radius: 5px;
     padding: 10px;
     outline: none;
+    background-color: rgb(228, 228, 228);
 }
 
-#validate-email, #validate-name, #validate-phone, #validate-password, #validate-cpassword, #validate-password{
+
+#validate-email, #validate-name, #validate-phone, #validate-password, #validate-cpassword, #validate-password {
     color: red;
     font-style: italic;
+}
+
+#signup-validation {
+    display: none;
 }
