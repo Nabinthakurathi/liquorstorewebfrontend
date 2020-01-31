@@ -24,12 +24,27 @@ $(document).ready(function(){
                 type:'POST',
 
                 success: function(data){
-
-                },
-
-                error: function(err){
-                    
-                }
+                    if(data.loggedin){
+                     localStorage.setItem('token', data.token);
+                     $('#login-validation').removeClass('alert-danger');
+                     $('#login-validation').addClass('alert-success');
+                     $('#login-validation').text(data.message);
+                     $('#login-validation').fadeIn(100);
+                    }
+                    else if(!data.loggedin){
+                     $('#login-validation').removeClass('alert-success');
+                     $('#login-validation').addClass('alert-danger');
+                     $('#login-validation').text(data.message);
+                     $('#login-validation').fadeIn(100);
+                    }
+                 },
+ 
+                 error: function(err){
+                     $('#login-validation').removeClass('alert-success');
+                     $('#login-validation').addClass('alert-danger');
+                     $('#login-validation').text(data.message);
+                     $('#login-validation').fadeIn(100);
+                 }
             })
         }
     })
