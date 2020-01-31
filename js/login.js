@@ -16,7 +16,7 @@ $(document).ready(function(){
         else{
           
             $.ajax({
-                url:'',
+                url:'http://localhost:8080/users/login',
                 data:{
                     'email':email,
                     'password':password
