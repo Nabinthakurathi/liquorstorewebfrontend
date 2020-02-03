@@ -5,15 +5,43 @@ $(document).ready(function () {
         let price = $('#txt-price').val();
         let name = $('#txt-name').val();
         let image = $('#image');
-        uploadImageToServer(image, drinktype, price, name)
+
+        if (drinktype === '') {
+            $('#add-drink-validation').removeClass('alert-success');
+            $('#add-drink-validation').addClass('alert-danger');
+            $('#add-drink-validation').text('Select drink type');
+            $('#add-drink-validation').fadeIn(100);
+        }
+        else if(price===''){
+            $('#add-drink-validation').removeClass('alert-success');
+            $('#add-drink-validation').addClass('alert-danger');
+            $('#add-drink-validation').text('Enter the price');
+            $('#add-drink-validation').fadeIn(100);
+        }
+
+        else if(!price.match('^[0-9]*$')){
+            $('#add-drink-validation').removeClass('alert-success');
+            $('#add-drink-validation').addClass('alert-danger');
+            $('#add-drink-validation').text('Enter valid price');
+            $('#add-drink-validation').fadeIn(100);
+        }
+
+        else if(name===''){
+            $('#add-drink-validation').removeClass('alert-success');
+            $('#add-drink-validation').addClass('alert-danger');
+            $('#add-drink-validation').text('Enter drink name');
+            $('#add-drink-validation').fadeIn(100);
+        }
+        else{
+            UploadDatatoServer(image, drinktype, price, name)
+        }
+
     })
-
-
 
 
 })
 
-function uploadImageToServer(imageUploadSelector, drinktype, price, name) {
+function UploadDatatoServer(imageUploadSelector, drinktype, price, name) {
     let formData = new FormData();
     let files = imageUploadSelector.get(0).files;
     if (files.length > 0) {
