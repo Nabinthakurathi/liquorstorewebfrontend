@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home </title>
+    <link href="../css/extracss/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/extracss/main.css" rel="stylesheet">
+    <link href="../css/extracss/responsive.css" rel="stylesheet">
+
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../js/add-to-cart-wishlist.js"></script>
+
+</head>
+
+<body>
+
+    <style>
+        #comment-input, #comments-list {
+            background-color: rgb(182, 182, 182, 0.5);
+            border-radius: 25px;
+            padding: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #comment-user{
+            color: rgb(109, 156, 218);
+            font-weight: bold;
+        }
+        #comment-content{
+            color: grey;
+        }
+        #txt-post-comment,#btn-post-rating{
+            border: none;
+            outline: none;
+            background: none;
+        }
+        #btn-post-comment{
+            background: none;
+            border: none;
+            font-size: 18px;
+        }
+    </style>
+
+    <header id="header">
+        <!--header-->
+
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html"><img src="../images/sitelogo.png" height="100px" width="100px"
+                                    alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                <li><a><i class="fa fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/header-middle-->
+
+    </header>
+
+
+
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+                        <h2>Category</h2>
+                        <div class="panel-group category-products" id="accordian">
+
+
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Beer</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Wine</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Rum</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Whiskey</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Vodka</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Gin</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><a href="#">Tequila</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/category-products-->
+
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right text-center">
+                    <img src="" alt="" id="single-drink-image"
+                        class="img-responsive img-fluid img-thumbnail col-sm-9 mb-5">
+                    <button class="col-sm-4 btn btn-success mt-5 text-center" id="add-to-cart"> Add to cart <i
+                            class="fa fa-cart-plus"></i> </button>
+                    <div class="col-sm-1"></div>
+                    <button class="col-sm-4 btn btn-danger mt-5 text-center" id="add-to-wishlist"> Add to wishlist <i
+                            class="fa fa-star"></i> </button>
+
+                    <!-- review and rating -->
+                    <div class="col-sm-4 text-center">
+                        <h4>Comments <i class="fa fa-comment-o"></i></h4>
+                        <div id="comment-input">
+                            <input type="text" id="txt-post-comment" placeholder="write something">
+                            <button id="btn-post-comment"> <i class="fa fa-send"></i> </button>
+                        </div>
+
+                        <div id="comments-list">
+                            <span id="comment-user">Nabin Chaduhary :</span>
+                            <span id="comment-content"> hello this is nice </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-4 text-center">
+                        <h4>Rating <i class="fa fa-star"></i> </h4>
+                        <select name="rating" id="rating">
+                            <option value="1">1 </option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="mt-5">
+        <!--Footer-->
+        <div class="footer-top mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="companyinfo">
+                            <h2><span>Liquor</span>Store</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/Footer-->
+
+
+
+</body>
+
+</html>
