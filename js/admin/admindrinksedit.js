@@ -36,7 +36,6 @@ function getAllDrinks() {
     var editDrinkDatabale = $('#editDrinkTable').DataTable();
     $.getJSON('http://localhost:8080/admin/getalldrink', function (drinkdata) {
         drinkdatas = drinkdata.data;
-        console.log(drinkdata.data)
         $.each(drinkdatas, function (index) {
             editDrinkDatabale.row.add([
                 drinkdatas[index].drinktype,
@@ -49,3 +48,4 @@ function getAllDrinks() {
         })
     })
 }
+
