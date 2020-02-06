@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let category = 'beer';
+    let category = 'tequila';
 
     $.getJSON('http://localhost:8080/categories/getdrinks/' + category, function (drinkdata) {
         let result = drinkdata.data;

@@ -2,16 +2,9 @@ $(document).ready(function () {
     getSingleDrink();
 
     $('#btn-add-to-cart').click(function () {
-        let cart = true;
-        let wishlist = false;
-        addToCartWishlist(cart, wishlist);
+        addToCartWishlist();
     })
 
-    $('#btn-add-to-wishlist').click(function () {
-        let cart = false;
-        let wishlist = true;
-        addToCartWishlist(cart, wishlist);
-    })
 })
 
 
@@ -74,8 +67,6 @@ function addToCartWishlist(cart, wishlist) {
             'username': username,
             'userphone': userphone,
             'useremail': useremail,
-            'cart': cart,
-            'wishlist': wishlist
         },
         success: function (data) {
             if (data.added) {
