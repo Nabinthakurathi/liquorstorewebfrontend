@@ -66,7 +66,9 @@ $(document).ready(function(){
                     $('#signup-validation').addClass('alert-success');
                     $('#signup-validation').text(data.message);
                     $('#signup-validation').fadeIn(100);
-                    window.location.reload();
+                    setTimeout(function(){
+                        window.location.reload();
+                    },3000)
                    }
                    else if(!data.registered){
                     $('#signup-validation').removeClass('alert-success');

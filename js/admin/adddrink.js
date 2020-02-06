@@ -60,6 +60,7 @@ function UploadDatatoServer(imageUploadSelector, drinktype, price, name) {
 
     else {
 
+        let token= localStorage.getItem('token');
         $.ajax({
             type: 'POST',
             url: 'http://localhost:8080/admin/upload/drink/image',
@@ -67,6 +68,11 @@ function UploadDatatoServer(imageUploadSelector, drinktype, price, name) {
             cache: false,
             processData: false,
             data: formData,
+            // beforeSend: function (xhr) {
+            //     if (token) {
+            //         xhr.setRequestHeader('Authorization', token);
+            //     }
+            // },
             success: function (data) {
                 if (data.added) {
                     $('#add-drink-validation').removeClass('alert-danger');

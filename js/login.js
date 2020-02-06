@@ -24,12 +24,22 @@ $(document).ready(function () {
                 type: 'POST',
 
                 success: function (data) {
-                    if (data.loggedin) {
+                    if (data.loggedin && data.userdata.usertype === 'normal') {
                         localStorage.setItem('token', data.token);
-                        $('#login-validation').removeClass('alert-danger');
-                        $('#login-validation').addClass('alert-success');
-                        $('#login-validation').text(data.message);
-                        $('#login-validation').fadeIn(100);
+                        localStorage.setItem('userid', data.userdata._id);
+                        localStorage.setItem('username', data.userdata.name);
+                        localStorage.setItem('userphone', data.userdata.phone);
+                        localStorage.setItem('useremail', data.userdata.email);
+                        window.location.href = 'homepage.html';
+
+                    }
+
+                    if (data.loggedin && data.userdata.usertype === 'admin') {
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('userid', data.userdata._id);
+                        localStorage.setItem('username', data.userdata.name);
+                        window.location.href = 'admin/index.html';
+
                     }
                     else if (!data.loggedin) {
                         $('#login-validation').removeClass('alert-success');
