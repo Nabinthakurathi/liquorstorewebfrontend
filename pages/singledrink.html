@@ -17,32 +17,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script src="../js/add-to-cart-wishlist.js"></script>
+    <script src="../js/comment-rating.js"></script>
 
 </head>
 
 <body>
 
     <style>
-        #comment-input, #comments-list {
+        #comment-input,
+        #comments-list,
+        #rating-list {
             background-color: rgb(182, 182, 182, 0.5);
             border-radius: 25px;
             padding: 5px;
             margin-top: 10px;
             margin-bottom: 10px;
         }
-        #comment-user{
+
+        #comment-user,
+        #rating-user {
             color: rgb(109, 156, 218);
             font-weight: bold;
         }
-        #comment-content{
+
+        #comment-content,
+        #rating-content {
             color: grey;
         }
-        #txt-post-comment,#btn-post-rating{
+
+        #txt-post-comment,
+        #btn-post-rating {
             border: none;
             outline: none;
             background: none;
         }
-        #btn-post-comment{
+
+        #btn-post-comment {
             background: none;
             border: none;
             font-size: 18px;
@@ -140,8 +150,8 @@
                     <button class="col-sm-5 btn btn-success mt-5 text-center" id="btn-add-to-cart"> Add to cart <i
                             class="fa fa-cart-plus"></i> </button>
                     <div class="col-sm-2"></div>
-                    <button class="col-sm-5 btn btn-danger mt-5 text-center" id="btn-add-to-wishlist"> Add to wishlist <i
-                            class="fa fa-star"></i> </button>
+                    <button class="col-sm-5 btn btn-danger mt-5 text-center" id="btn-add-to-wishlist"> Add to wishlist
+                        <i class="fa fa-star"></i> </button>
 
                     <!-- review and rating -->
                     <div class="col-sm-5 text-center">
@@ -151,10 +161,10 @@
                             <button id="btn-post-comment"> <i class="fa fa-send"></i> </button>
                         </div>
 
-                        <div id="comments-list">
-                            <span id="comment-user">Nabin Chaduhary :</span>
-                            <span id="comment-content"> hello this is nice </span>
+                        <div id="comments-container">
+                           
                         </div>
+
                     </div>
                     <div class="col-sm-2"></div>
                     <div class="col-sm-5 text-center">
@@ -166,6 +176,12 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
+
+                        <div id="rating-list">
+                            <span id="rating-user">Nabin Chaduhary :</span>
+                            <span id="rating-content"> 5 </span>
+                        </div>
+
                     </div>
 
                 </div>

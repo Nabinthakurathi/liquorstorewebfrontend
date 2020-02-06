@@ -2,7 +2,15 @@ $(document).ready(function () {
     getSingleDrink();
 
     $('#btn-add-to-cart').click(function () {
-        addToCart();
+        let cart = true;
+        let wishlist = false;
+        addToCartWishlist(cart, wishlist);
+    })
+
+    $('#btn-add-to-wishlist').click(function () {
+        let cart = false;
+        let wishlist = true;
+        addToCartWishlist(cart, wishlist);
     })
 })
 
@@ -39,7 +47,7 @@ function getSingleDrink() {
 
 }
 
-function addToCart() {
+function addToCartWishlist(cart, wishlist) {
     let drinkname = localStorage.getItem('drinkname');
     let drinkprice = localStorage.getItem('drinkprice');
     let drinkid = localStorage.getItem('drinkid');
@@ -55,7 +63,7 @@ function addToCart() {
 
 
     $.ajax({
-        url: 'http://localhost:8080/cart/addtocart',
+        url: 'http://localhost:8080/cart/addtocartwishlist',
         type: 'POST',
         data: {
             'drinkid': drinkid,
@@ -66,8 +74,8 @@ function addToCart() {
             'username': username,
             'userphone': userphone,
             'useremail': useremail,
-            'cart': true,
-            'wishlist': false
+            'cart': cart,
+            'wishlist': wishlist
         },
         success: function (data) {
             if (data.added) {
