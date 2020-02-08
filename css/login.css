@@ -28,3 +28,7 @@ input[type="text"], input[type="password"]{
     color: red;
     font-style: italic;
 }
+
+#login-validation{
+    display: none;
+}
