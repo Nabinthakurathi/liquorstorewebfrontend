@@ -27,8 +27,9 @@
     <script src="lib/chart-master/Chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="../../js/admin/adddrink.js"></script>
-    <script src="../../js/admin/admindrinksedit.js"> </script>
+
+    <script src="../../js/admin/cart-order.js"></script>
+
 
 </head>
 
@@ -267,8 +268,8 @@
                         </a>
                         <ul class="sub">
                             <li><a href="adddrink.html">Add drink</a></li>
-                            <li class="active"><a href="editdrinks.html">Edit Drink</a></li>
-                            <li><a href="orders.html">Orders</a></li>
+                            <li><a href="editdrinks.html">Edit Drink</a></li>
+                            <li class="active"><a href="orders.html">Orders</a></li>
                         </ul>
                     </li>
 
@@ -281,15 +282,15 @@
 
         <section id="main-content">
             <section class="wrapper mt-5">
-                <table id="editDrinkTable" class="display mt-5" style="width:100%">
+                <table id="ordersTable" class="display mt-5" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Drink type</th>
                             <th>Drink name</th>
                             <th>Price</th>
                             <th>Image</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Username</th>
+                            <th>User phone</th>
+                            <th>User email</th>
                         </tr>
                     </thead>
                     <tbody id="drink-details-body">
@@ -316,23 +317,11 @@
         <script type="text/javascript">
 
             $(document).ready(function () {
-                $('#editDrinkTable').DataTable();
+                $('#ordersTable').DataTable();
             });
 
 
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
 
-                    reader.onload = function (e) {
-                        $('#showImage').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-
-                $('#showImage').fadeIn(100);
-            }
 
         </script>
 
